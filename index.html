@@ -1,0 +1,124 @@
+<html>
+<head><title> HOMEPAGE </title>
+<link href="asesst/css/style.css" rel="stylesheet">
+<a name="top"> </a> 
+</head>
+<body>
+
+<ul>
+  <li><a href="index.html">HOMEPAGE</a></li>
+  <li><a href="about_me.html" target="_blank">ABOUT ME</a></li>
+  <li><a href="contact.html" target="_blank">CONTACT</a></li>
+  <li><a href="current_favourite_things.html" target="_blank">CURRENT FAVOURITE THINGS</a></li>
+<li><a href="my_motivation.html" target="_blank">MY MOTIVATION</a></li>
+<li><a href="photo_of_memories.html" target="_blank">PHOTO OF MEMORIES</a></li>
+
+</ul>
+
+<br>
+
+<center> <font size="45px"><marquee width="500px" height="100px" class="blink"> Hey! welcome to my website, don't forget to follow my igshop @onlineshop_bymuslimah~</marquee></font></center>
+<br>
+<!--- JavaScript--->
+<center><br>
+<!--- CSS---> 
+<div id="clock">8:10:45</div>
+<!--- link current time from JavaScript---> 
+ <script src="clock2.js"></script>
+<br<br><br>
+
+
+<!---notes--->
+<div class="info">
+  <p><b>Info!</b> weird person <a href="about_me.html" target="_blank">here</a></p>
+</div>
+
+<br><br>
+<!---auto slideshow--->
+<center>
+<div class="mySlides fade">
+  <img src="asesst/image/cloud.jpg" style="width:100%" height="600px">
+</div>
+
+<div class="mySlides fade">
+  <img src="asesst/image/cloud2.jpg" style="width:100%" height="600px">
+</div>
+
+<div class="mySlides fade">
+  <img src="asesst/image/cloud3.jpg" style="width:100%"height="600px">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<br>
+<a href="#top"> <img src=asesst/image/arrow_up.png width="75"px align=right></a>
+<br><br><br><br>
+<script> setInterval(showTime, 1000);
+function showTime() {
+	let time = new Date();
+	let hour = time.getHours();
+	let min = time.getMinutes();
+	let sec = time.getSeconds();
+	am_pm = "AM";
+
+	if (hour > 12) {
+		hour -= 12;
+		am_pm = "PM";
+	}
+	if (hour == 0) {
+		hr = 12;
+		am_pm = "AM";
+	}
+
+	hour = hour < 10 ? "0" + hour : hour;
+	min = min < 10 ? "0" + min : min;
+	sec = sec < 10 ? "0" + sec : sec;
+
+	let currentTime = hour + ":"
+			+ min + ":" + sec + am_pm;
+
+	document.getElementById("clock")
+			.innerHTML = currentTime;
+}
+showTime();
+</script>
+
+<!--- FOOTER START --->
+<footer>
+<p>Copyright @Siti Muslimah 2023</p>
+</footer>
+
+
+</body>
+</html>
+
+
